@@ -4,13 +4,9 @@ const morgan = require('morgan');
 const { errorHandler } = require('./middleware/error.middleware');
 const authRoutes = require('./routes/auth.routes');
 const shopifyRoutes = require('./routes/shopify.routes');
-const connectDB = require('./config/database');
 
 // Initialize Express app
 const app = express();
-
-// Connect to MongoDB
-connectDB();
 
 // Middleware
 app.use(cors());
@@ -30,8 +26,9 @@ app.use('/shopify', shopifyRoutes);
 app.get('/', (req, res) => {
   res.json({ 
     status: 'success', 
-    message: 'API funcionando correctamente',
-    version: '1.0.0' 
+    message: 'API funcionando correctamente con Supabase',
+    version: '1.0.0',
+    database: 'Supabase'
   });
 });
 
