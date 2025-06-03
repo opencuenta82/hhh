@@ -1,7 +1,8 @@
-const User = require('../models/user.model');
-const { AppError, catchAsync } = require('../utils/errors');
-const { generateAccessToken, generateRefreshToken, verifyToken } = require('../utils/jwt');
-const config = require('../config/config');
+const path = require('path');
+const User = require(path.join(__dirname, '../../models/user.model'));
+const { AppError, catchAsync } = require(path.join(__dirname, '../../utils/errors'));
+const { generateAccessToken, generateRefreshToken, verifyToken } = require(path.join(__dirname, '../../utils/jwt'));
+const config = require(path.join(__dirname, '../../config/config'));
 
 /**
  * @desc    Registrar un nuevo usuario

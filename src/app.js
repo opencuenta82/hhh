@@ -2,8 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const { errorHandler } = require('./middleware/error.middleware');
-const authRoutes = require('./routes/auth.routes');
-const shopifyRoutes = require('./routes/shopify.routes');
+const authRoutes = require('./auth/routes/auth.routes');
 
 // Initialize Express app
 const app = express();
@@ -20,7 +19,6 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routes
 app.use('/auth', authRoutes);
-app.use('/shopify', shopifyRoutes);
 
 // Health check route
 app.get('/', (req, res) => {

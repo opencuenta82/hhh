@@ -1,10 +1,6 @@
 const config = {
   nodeEnv: process.env.NODE_ENV || 'development',
-  port: process.env.PORT || 3000,
-  
-  // MongoDB configuration
-  mongoUri: process.env.MONGODB_URI || 'mongodb://localhost:27017/shopify-api',
-  
+  port: process.env.PORT || 5000,
   // JWT configuration
   jwt: {
     secret: process.env.JWT_SECRET || 'your_default_jwt_secret',

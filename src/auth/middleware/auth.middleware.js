@@ -1,7 +1,8 @@
+const path = require('path');
 const jwt = require('jsonwebtoken');
-const config = require('../config/config');
-const User = require('../models/user.model');
-const { AppError } = require('../utils/errors');
+const config = require(path.join(__dirname, '../../config/config'));
+const User = require(path.join(__dirname, '../../models/user.model'));
+const { AppError } = require(path.join(__dirname, '../../utils/errors'));
 
 /**
  * Middleware para proteger rutas que requieren autenticación
